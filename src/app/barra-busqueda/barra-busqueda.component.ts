@@ -12,11 +12,9 @@ export class BarraBusquedaComponent implements OnInit {
   public autores: Array<string>;
   public selectedAutor: string;
   public nLibro: Libro;
-  public agregar: bool;
   constructor(private api : ApiService) {
     this.autores = ['Mario Mendoza', 'Hector Abad', 'Gabriel Garcia Marques', 'George R. R. Martin'];
     this.nLibro = { autor: "", nombre: "", fecha: new Date() };
-    this.agregar = false;
   }
 
   ngOnInit() {
