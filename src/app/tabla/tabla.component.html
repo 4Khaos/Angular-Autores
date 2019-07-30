@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th>#</th>
+    <th>Autor</th>
+    <th>Nombre</th>
+    <th>Fecha</th>
+  </tr>
+  <ng-container *ngIf="autor; else elseBlock">
+      <tr *ngFor="let libro of libros; index as i;">
+        <ng-container *ngIf="libro.autor === autor">
+          <td>{{i+1}}</td>
+          <td>{{libro.autor}}</td>
+          <td>{{libro.nombre}}</td>
+          <td>{{libro.fecha}}</td>
+        </ng-container>
+      </tr>
+  </ng-container>
+  <ng-template #elseBlock>
+      <tr *ngFor="let libro of libros; index as i;">
+        <td>{{i+1}}</td>
+        <td>{{libro.autor}}</td>
+        <td>{{libro.nombre}}</td>
+        <td>{{libro.fecha}}</td>
+      <tr>
+  </ng-template>
+</table>

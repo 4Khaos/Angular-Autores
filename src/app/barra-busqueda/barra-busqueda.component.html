@@ -1,0 +1,12 @@
+<div>
+  <input #nLibro type="text" placeholder="Autor - Nombre">
+  <button type="button" (click) = "guardarLibro(nLibro.value)" > Agregar  </button>
+  <select #autorSel (click)="onSelect(autorSel.value)">
+    <ng-container>
+      <option *ngFor="let autor of autores" value={{autor}}
+      [class.selected]="autor===selectedAutor">{{autor}}</option>
+    </ng-container>
+  </select>
+
+</div>
+<app-tabla [autor]="selectedAutor" (messageEvent)="receiveMessage($event)"></app-tabla>
